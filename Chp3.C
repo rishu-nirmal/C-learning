@@ -158,3 +158,63 @@
 //     // Calculate and immediately return the result
 //     return (celsius * 9.0 / 5.0) + 32;
 // }
+
+// To make pascal triangle //
+
+#include <stdio.h>
+void PrintPattern(int n);
+int main()
+{
+    int N;
+    printf("\n Enter the no of rows: ");
+    scanf("%d",&N);
+    PrintPattern(N);
+    return 0;
+}
+
+void PrintPattern(int n)
+{
+    int  r,i;
+    for (r=1;r<=n;r++)
+    {
+        printf("\n");
+        for(i=1;i<=n-r;i++)
+           printf(" ");
+        for(i=1;i<=r;i++)
+           printf("%2d",r);
+    }
+}
+
+// Diamond number pattern //
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void diamond (int n);
+
+int main()
+{
+    int N;
+    printf("\n Central no CR: ");
+    scanf("%d",&N);
+    diamond(N);
+    return 0;
+}
+
+void diamond(int n)
+
+{
+    int r,i,CR;
+    for(r=1;r<=2*n-1;r++)
+    {
+        printf("\n");
+        for(i=1;i<=abs(n-r);i++)
+           printf(" ");
+        CR = (r<=n) ? r : CR-1;
+        for(i=1;i<=CR;i++)
+           printf("%d",i);
+        for(i=CR-1;i>=1;i--)
+            printf("%d",i);
+        
+    }
+}
