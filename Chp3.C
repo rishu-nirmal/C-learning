@@ -161,60 +161,124 @@
 
 // To make pascal triangle //
 
-#include <stdio.h>
-void PrintPattern(int n);
-int main()
-{
-    int N;
-    printf("\n Enter the no of rows: ");
-    scanf("%d",&N);
-    PrintPattern(N);
-    return 0;
-}
+// #include <stdio.h>
+// void PrintPattern(int n);
+// int main()
+// {
+//     int N;
+//     printf("\n Enter the no of rows: ");
+//     scanf("%d",&N);
+//     PrintPattern(N);
+//     return 0;
+// }
 
-void PrintPattern(int n)
-{
-    int  r,i;
-    for (r=1;r<=n;r++)
-    {
-        printf("\n");
-        for(i=1;i<=n-r;i++)
-           printf(" ");
-        for(i=1;i<=r;i++)
-           printf("%2d",r);
-    }
-}
+// void PrintPattern(int n)
+// {
+//     int  r,i;
+//     for (r=1;r<=n;r++)
+//     {
+//         printf("\n");
+//         for(i=1;i<=n-r;i++)
+//            printf(" ");
+//         for(i=1;i<=r;i++)
+//            printf("%2d",r);
+//     }
+// }
 
-// Diamond number pattern //
+// // Diamond number pattern //
 
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
-void diamond (int n);
+// void diamond (int n);
 
-int main()
-{
-    int N;
-    printf("\n Central no CR: ");
-    scanf("%d",&N);
-    diamond(N);
-    return 0;
-}
+// int main()
+// {
+//     int N;
+//     printf("\n Central no CR: ");
+//     scanf("%d",&N);
+//     diamond(N);
+//     return 0;
+// }
 
-void diamond(int n)
+// void diamond(int n)
 
-{
-    int r,i,CR;
-    for(r=1;r<=2*n-1;r++)
-    {
-        printf("\n");
-        for(i=1;i<=abs(n-r);i++)
-           printf(" ");
-        CR = (r<=n) ? r : CR-1;
-        for(i=1;i<=CR;i++)
-           printf("%d",i);
-        for(i=CR-1;i>=1;i--)
-            printf("%d",i);
+// {
+//     int r,i,CR;
+//     for(r=1;r<=2*n-1;r++)
+//     {
+//         printf("\n");
+//         for(i=1;i<=abs(n-r);i++)
+//            printf(" ");
+//         CR = (r<=n) ? r : CR-1;
+//         for(i=1;i<=CR;i++)
+//            printf("%d",i);
+//         for(i=CR-1;i>=1;i--)
+//             printf("%d",i);
         
+//     }
+// }
+
+#include <stdio.h>
+#include <math.h>
+#define DELTA 0.0000000000001
+
+int is_equal_to_zero(float);
+void display_root_quadratic(float,float,float);
+
+int main()
+{
+    float a,b,c;
+    printf("\n Given Quadratic Equation is of form:\n a*x^2+b*x+c=0 \n Enter the value for a,b,c(a,b,c): ");
+    scanf("%f%f%f",&a,&b,&c);
+    display_root_quadratic(a,b,c);
+    return 0;
+}
+
+int is_equal_to_zero(float x)
+{
+    return(fabs(x)<DELTA);
+}
+
+void display_root_quadratic(float a, float b, float c)
+{
+    float x1,x2,D;
+    float re,im;
+    float ra,ir;
+if(is_equal_to_zero(a)&&is_equal_to_zero(b))
+{
+    printf("\n Not a valid Equation");
+    return;
+}
+else if(is_equal_to_zero(a)&& !is_equal_to_zero(b))
+{
+    printf("\n Not a quadratic equation...Solution is x=%.3f",-c/b);
+    return;
+}
+else 
+{
+    D=b*b-4*a*c;
+    x1=-b/(2*a);
+    x2=-b/(2*a);
+    if(is_equal_to_zero(D))
+    {
+        printf("\n Roots are equal...\nx1=%.3f,x2=%.3f,x1,x2");
     }
+    else if(D>0.0)
+    {
+        ra=-b/2*a;
+        ir=pow(D,0.5)/(2*a);
+        x1=ra+ir;
+        x2=ra-ir;
+        printf("\n Roots are irrational...\n x1=%f,x2=%f",x1,x2);
+    }
+    else 
+    {
+        re=-b/(2*a);
+        im=pow(-D,0.5)/(2*a);
+        printf("\n Roots are complex conjugates...");
+        printf("\n x1=%.3f",re);
+        (im>0.0)? printf("-i%3f",im):printf("+i%3f",-im);
+    }
+}
 }
