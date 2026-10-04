@@ -219,6 +219,8 @@
 //     }
 // }
 
+// Quadratic equation //
+
 #include <stdio.h>
 #include <math.h>
 #define DELTA 0.0000000000001
