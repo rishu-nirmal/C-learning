@@ -133,3 +133,77 @@
 //     return 0;
 // }
 
+// Practising loops //
+
+// #include <stdio.h>
+// void main()
+// {
+//     int n,i;
+//     printf("\n Enter the number of lines: ");
+//     scanf("%d",&n);
+//     for (i=0;i<n;i++) {
+//         printf("\n India,");
+//         printf(" West Bengal.");
+//     }
+// }
+
+// Function and calling of a function  //
+
+// #include <stdio.h>
+
+// int addNumbers(int a, int b);
+
+// int addNumbers(int a, int b) {
+//     int sum = a + b;
+//     return sum;
+// }
+
+// int main() {
+//     int num1, num2, result;
+//     printf("\n Enter the numbers: ");
+//     scanf("%d%d", &num1, &num2);
+
+//     result = addNumbers(num1, num2);
+//     printf("\n Sum of the two numbers is: %d",result);
+//     return 0;
+// }
+
+// Fibonacci Series //
+
+// #include <stdio.h>
+// int main() {
+//     int n,i;
+//     int a = 0, b = 1,c;
+//     printf("Enter the value of n: ");
+//     scanf("%d",&n);
+
+//     printf("\n Fibonacci Series: ");
+
+//     for(i=1;i<=n;i++) {
+//         printf("\t %d",a);
+//         c=a+b;
+//         a=b;
+//         b=c;
+//     }
+//     return 0;
+// }
+
+// To determine factorial //
+
+#include <stdio.h>
+int main() {
+    int N,i,S=0,F=1;
+    printf("\n Enter the integer: ");
+    scanf("%d",&N);
+    for(i=1;i<=N;i++) {
+    F=F*i;
+    S=S+i;
+    }
+    printf("\nResults:\n");
+    printf("\n %d!=%d",N,F);
+    if(N>0)
+      printf("\n Sum of the sequence from 1 to %d is %d.",N,S);
+    else
+      printf("\n Result of the sum is: %d",S);
+    return 0;
+}
