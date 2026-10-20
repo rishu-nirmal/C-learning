@@ -11,6 +11,9 @@ Welcome to my repository dedicated to tracking my daily progress in learning **C
 * **`Basics.c`**: Working with basic syntax, data types, standard input/output (`printf`, `scanf`), and arithmetic operations.
 * **`Chp2.c`**: Control flow structures, conditional statements (`if-else`), switch-case structures, and relational logic.
 * **`Chp3.c`**: Iterative statements, loop controls (`for`, `while`, `do-while`), nested loops, and basic algorithmic patterns.
+* **`Chp4.c`**: Functions and recursions.
+* **`Chp5.c`**: Arrays.
+* **`Chp6.c`**: Pointers.
 
 ## 🛠️ Tools & Environment
 * **Language:** C (C11/C17 Standard)
