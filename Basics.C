@@ -190,20 +190,3 @@
 
 // To determine factorial //
 
-#include <stdio.h>
-int main() {
-    int N,i,S=0,F=1;
-    printf("\n Enter the integer: ");
-    scanf("%d",&N);
-    for(i=1;i<=N;i++) {
-    F=F*i;
-    S=S+i;
-    }
-    printf("\nResults:\n");
-    printf("\n %d!=%d",N,F);
-    if(N>0)
-      printf("\n Sum of the sequence from 1 to %d is %d.",N,S);
-    else
-      printf("\n Result of the sum is: %d",S);
-    return 0;
-}
