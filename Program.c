@@ -1,19 +1,114 @@
 // Fibonacci series //
 
-#include <stdio.h>
-int main()
-{
-    int n,i;
-    int a = 0, b = 1, c;
-    printf("\n Enter the number of terms: ");
-    scanf("%d",&n);
-    printf("\n Fibonacci series is: ");
-    for(i=1;i<=n;i++)
-    {
-        printf("\t%d",a);
-        c = a + b;
-        a = b;
-        b = c;
-    }
-    return 0;
-}
+// #include <stdio.h>
+// int main()
+// {
+//     int n,i;
+//     int a = 0, b = 1, c;
+//     printf("\n Enter the number of terms: ");
+//     scanf("%d",&n);
+//     printf("\n Fibonacci series is: ");
+//     for(i=1;i<=n;i++)
+//     {
+//         printf("\t%d",a);
+//         c = a + b;
+//         a = b;
+//         b = c;
+//     }
+//     return 0;
+// }
+
+// Sin expansion //
+
+// #include <stdio.h>
+// int main() {
+//     int i,n;
+//     float x,sum = 0,term;
+
+//     printf("Enter the value of x in radians: ");
+//     scanf("%f",&x);
+
+//     printf("Enter the number of terms: ");
+//     scanf("%d",&n);
+
+//     term = x;
+
+//     for(i=1;i<=n;i++) {
+//         sum = sum + term;
+//         term = -term*x*x/((2*i)*(2*i+1));
+//     }
+
+//     printf("Sin(x) = %f",sum);
+//     return 0;
+// }
+
+// Cos expansion //
+
+// #include <stdio.h>
+// int main() {
+//     int i,n;
+//     float x,sum = 0,term;
+
+//     printf("Enter the value of x in radians: ");
+//     scanf("%f",&x);
+
+//     printf("Enter the number of terms: ");
+//     scanf("%d",&n);
+
+//     term = 1;
+
+//     for(i=1;i<=n;i++) {
+//         sum = sum + term;
+//         term = -term*x*x/((2*i-1)*(2*i));
+//     }
+
+//     printf("Cos(x) = %f",sum);
+//     return 0;
+// }
+
+// Exponential expansion //
+
+// #include <stdio.h>
+// int main() {
+//     int n,i;
+//     float x,sum = 0,term;
+
+//     printf("Enter the value of x in radians: ");
+//     scanf("%f",&x);
+
+//     printf("Enter the number of terms: ");
+//     scanf("%d",&n);
+
+//     term = 1;
+
+//     for(i=1;i<=n;i++) {
+//         sum = sum + term;
+//         term = term*x/i;
+//     }
+
+//     printf("Exp(x) = %f",sum);
+//     return 0;
+// }
+
+// Program to find the greatest of four numbers entered by the user //
+
+// #include <stdio.h>
+// int main() {
+//     int a,b,c,d;
+//     printf("Enter  any four numbers: ");
+//     scanf("%d%d%d%d",&a,&b,&c,&d);
+
+//     if(a>=b && a>=c && a>=d) {
+//         printf("First number is greater.");
+//     }
+//     else if(b>=a && b>=c && b>=d) {
+//         printf("Second number is greater.");
+//     }
+//     else if(c>=a && c>=b && c>=d) {
+//         printf("Third number is greater.");
+//     }
+//     else {
+//         printf("Last number is the greatest.");
+//     }
+//     return 0;
+// }
