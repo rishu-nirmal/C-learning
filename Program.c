@@ -177,25 +177,70 @@
 
 // Guess the magic number //
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <time.h> 
+
+// int main(void) {
+//     int magic;
+//     int guess;
+
+//     srand(time(NULL));
+
+//     magic = (rand() % 100) + 1;
+
+//     printf("Guess the magic number (between 1 and 100): ");
+//     scanf("%d", &guess);
+
+//     if (guess == magic) {
+//         printf("** Right **\n");
+//     } else {
+//         printf("Wrong! The magic number was %d.\n", magic);
+//     }
+
+//     return 0;
+// }
+
+// Program for Pascal triangle by making use of Permutation and combination //
+
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h> 
 
-int main(void) {
-    int magic;
-    int guess;
+long long factorial(int n) {
+    long long fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
 
-    srand(time(NULL));
+long long combination(int n, int r) {
+    return factorial(n) / (factorial(r) * factorial(n - r));
+}
 
-    magic = (rand() % 100) + 1;
+int main() {
+    int rows;
 
-    printf("Guess the magic number (between 1 and 100): ");
-    scanf("%d", &guess);
+    printf("Enter the number of rows for Pascal's Triangle: ");
+    if (scanf("%d", &rows) != 1 || rows < 1) {
+        printf("Please enter a valid positive integer.\n");
+        return 1;
+    }
 
-    if (guess == magic) {
-        printf("** Right **\n");
-    } else {
-        printf("Wrong! The magic number was %d.\n", magic);
+    if (rows > 21) {
+        printf("Note: Rows strictly above 21 may cause integer overflow with standard 64-bit factorials.\n\n");
+    }
+
+    for (int n = 0; n < rows; n++) {
+        
+        for (int space = 0; space < rows - n - 1; space++) {
+            printf("   "); 
+        }
+
+        for (int r = 0; r <= n; r++) {
+            printf("%6lld", combination(n, r));
+        }
+
+        printf("\n");
     }
 
     return 0;
