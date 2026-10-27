@@ -203,44 +203,67 @@
 
 // Program for Pascal triangle by making use of Permutation and combination //
 
+// #include <stdio.h>
+
+// long long factorial(int n) {
+//     long long fact = 1;
+//     for (int i = 1; i <= n; i++) {
+//         fact *= i;
+//     }
+//     return fact;
+// }
+
+// long long combination(int n, int r) {
+//     return factorial(n) / (factorial(r) * factorial(n - r));
+// }
+
+// int main() {
+//     int rows;
+
+//     printf("Enter the number of rows for Pascal's Triangle: ");
+//     if (scanf("%d", &rows) != 1 || rows < 1) {
+//         printf("Please enter a valid positive integer.\n");
+//         return 1;
+//     }
+
+//     if (rows > 21) {
+//         printf("Note: Rows strictly above 21 may cause integer overflow with standard 64-bit factorials.\n\n");
+//     }
+
+//     for (int n = 0; n < rows; n++) {
+        
+//         for (int space = 0; space < rows - n - 1; space++) {
+//             printf("   "); 
+//         }
+
+//         for (int r = 0; r <= n; r++) {
+//             printf("%6lld", combination(n, r));
+//         }
+
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+
+// Program for writing factorial //
+
 #include <stdio.h>
 
-long long factorial(int n) {
-    long long fact = 1;
-    for (int i = 1; i <= n; i++) {
-        fact *= i;
-    }
-    return fact;
-}
-
-long long combination(int n, int r) {
-    return factorial(n) / (factorial(r) * factorial(n - r));
-}
-
 int main() {
-    int rows;
+    int n, i;
+    unsigned long long fact = 1;
 
-    printf("Enter the number of rows for Pascal's Triangle: ");
-    if (scanf("%d", &rows) != 1 || rows < 1) {
-        printf("Please enter a valid positive integer.\n");
-        return 1;
-    }
+    printf("Enter an integer: ");
+    scanf("%d", &n);
 
-    if (rows > 21) {
-        printf("Note: Rows strictly above 21 may cause integer overflow with standard 64-bit factorials.\n\n");
-    }
-
-    for (int n = 0; n < rows; n++) {
-        
-        for (int space = 0; space < rows - n - 1; space++) {
-            printf("   "); 
+    if (n < 0) {
+        printf("Error! Factorial of a negative number doesn't exist.\n");
+    } else {
+        for (i = 1; i <= n; ++i) {
+            fact *= i;
         }
-
-        for (int r = 0; r <= n; r++) {
-            printf("%6lld", combination(n, r));
-        }
-
-        printf("\n");
+        printf("Factorial of %d = %llu\n", n, fact);
     }
 
     return 0;
